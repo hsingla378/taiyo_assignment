@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 // Define the structure of a contact object
 interface Contact {
@@ -49,12 +50,15 @@ const Contacts: React.FC = () => {
         ...formData,
       },
     });
+
     // Reset the form data
     setFormData({
       firstName: "",
       lastName: "",
       active: false,
     });
+
+    toast.success("Contact added successfully");
   };
 
   // Handle form data change events
@@ -82,6 +86,15 @@ const Contacts: React.FC = () => {
   // Hide the contact creation form
   const handleHideForm = () => {
     setShowForm(false);
+  };
+
+  // Handle deleting a contact
+  const handleDeleteContact = (id: number) => {
+    dispatch({
+      type: "contact/deleteContact",
+      payload: id,
+    });
+    toast.success("Contact deleted successfully");
   };
 
   return (
@@ -114,7 +127,10 @@ const Contacts: React.FC = () => {
               <button className="bg-blue-900 text-white p-2 w-full rounded-lg">
                 Edit
               </button>
-              <button className="bg-red-700 text-white p-2 w-full rounded-lg">
+              <button
+                className="bg-red-700 text-white p-2 w-full rounded-lg"
+                onClick={() => handleDeleteContact(contact?.id)}
+              >
                 Delete
               </button>
             </div>
