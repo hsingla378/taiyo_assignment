@@ -1,8 +1,7 @@
-// src/App.tsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Contacts from './pages/Contacts';
-import Dashboard from './pages/Dashboard';
-import Home from './pages/Home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Contacts from "./pages/Contacts";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 
 function App() {
   return (
