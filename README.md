@@ -46,3 +46,61 @@ This project is a **Contact Management App** built using **ReactJS**, **TypeScri
 ### Dashboard Page
 1. **COVID-19 Line Graph**: Shows the fluctuations in cases, deaths, and recoveries over time.
 2. **Interactive Map**: Shows markers for countries, and you can hover over the markers to see the active, recovered, and death statistics for each country.
+
+## Screenshots
+
+#### Contacts (Landing)
+
+![image](https://github.com/user-attachments/assets/7032dd3a-066c-4b23-a5cc-442c5029436c)
+
+---
+
+#### Create Contact
+
+![image](https://github.com/user-attachments/assets/eb84b9a8-88f1-436f-bee1-8f230b26f188)
+
+![image](https://github.com/user-attachments/assets/8481a468-d5d7-4765-b8ef-69b1ee07fee8)
+
+---
+
+#### Contacts List
+
+![image](https://github.com/user-attachments/assets/a57d0871-be50-447d-919f-b09de0b5617c)
+
+---
+
+#### Edit Contact
+
+![image](https://github.com/user-attachments/assets/0b2e3f49-a045-4216-b739-5b068390eeee)
+
+![image](https://github.com/user-attachments/assets/6fe59293-27e0-4716-96fb-ed9463a768d2)
+
+---
+
+#### Delete Contact
+
+![image](https://github.com/user-attachments/assets/37b8426e-dfd1-40f6-a58b-3b9a31754961)
+
+---
+
+#### Clear Contacts
+
+![image](https://github.com/user-attachments/assets/b5fc05fd-83b5-4bb8-9f5a-51dcc057afb5)
+
+![image](https://github.com/user-attachments/assets/73aeb028-5b7c-4c2e-b53b-8c5e3731216e)
+
+---
+
+#### Covid Graph
+
+![image](https://github.com/user-attachments/assets/f05502ff-8a66-4026-bba1-1efa345c7ac7)
+
+---
+
+#### Covid Map
+
+![image](https://github.com/user-attachments/assets/31666c27-836a-47f1-b6f9-908738b1d682)
+
+![image](https://github.com/user-attachments/assets/1ed65c56-9abb-4e4c-8722-2034cdebd625)
+
+
