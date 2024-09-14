@@ -5,6 +5,7 @@ import ContactForm from "../components/ContactForm";
 import ContactList from "../components/ContactList";
 import { AppDispatch, RootState } from "../utils/store";
 import { Contact, FormData } from "../utils/types";
+import { clearContacts } from "../utils/contactSlice";
 
 const Contacts: React.FC = () => {
   const [editMode, setEditMode] = React.useState(false);
@@ -27,7 +28,7 @@ const Contacts: React.FC = () => {
   // Handle adding a new contact
   const handleAddContact = () => {
     if (!formData.firstName || !formData.lastName) {
-      alert("Please fill in all fields");
+      toast("Please fill in all fields", { icon: "🚨" });
       return;
     }
 
@@ -112,14 +113,30 @@ const Contacts: React.FC = () => {
     toast.success("Contact deleted successfully");
   };
 
+  // Handle clearing all contacts
+  const handleClearContacts = () => {
+    if (contacts.length === 0) {
+      toast.error("No contacts to clear");
+      return;
+    }
+    dispatch(clearContacts());
+    toast.success("All contacts cleared");
+  };
+
   return (
     <div className="p-6 md:p-10">
       <div className="w-full flex items-center justify-center mb-8">
         <button
-          className="bg-green-800 rounded-lg text-white p-2 px-4"
+          className="bg-green-800 rounded-lg text-white p-2 px-4 mr-4"
           onClick={() => handleShowForm()}
         >
           Create Contact
+        </button>
+        <button
+          className="bg-red-800 rounded-lg text-white p-2 px-4"
+          onClick={handleClearContacts}
+        >
+          Clear All Contacts
         </button>
       </div>
       <ContactList
