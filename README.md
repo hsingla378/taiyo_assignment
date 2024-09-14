@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# Contact Management App with Charts and Maps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Assignment Reference](https://github.com/hsingla378/taiyo_assignment/blob/master/Frontend%20Task%20-%20Taiyo.pdf) 
 
-Currently, two official plugins are available:
+[Live App](https://taiyoassignment.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a **Contact Management App** built using **ReactJS**, **TypeScript**, **Redux**, **React Query (TanstackQuery)**, and **TailwindCSS**. The app allows users to add, edit, view, and delete contacts. Additionally, it provides a dashboard featuring charts and maps to visualize COVID-19 data. The app is responsive and works seamlessly across different devices.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Contacts Page
+- Add new contacts using a form.
+- View a list of all added contacts.
+- Edit and delete existing contacts.
+- View contact details.
+- Data is managed using **Redux** for state management.
 
-- Configure the top-level `parserOptions` property like this:
+### Dashboard Page
+- A line graph showing COVID-19 case fluctuations over time.
+- An interactive map with markers showing COVID-19 data for different countries.
+- **React Query** is used to fetch data from APIs.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
+- **ReactJS**: Frontend library for building user interfaces.
+- **TypeScript**: For type-safe JavaScript.
+- **Redux**: State management.
+- **React Query (TanstackQuery)**: For handling API calls and caching.
+- **React Router v6**: For routing and navigation.
+- **TailwindCSS**: For styling the app.
+- **React Leaflet**: For interactive maps.
+- **Chart.js**: For rendering charts.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## API Endpoints Used
+- **Global COVID-19 data**: `https://disease.sh/v3/covid-19/all`
+- **Country-specific COVID-19 data**: `https://disease.sh/v3/covid-19/countries`
+- **Historical COVID-19 cases**: `https://disease.sh/v3/covid-19/historical/all?lastdays=all`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## How to Use
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Contacts Page
+1. **Create a New Contact**: Click the "Create Contact" button and fill in the form. You can provide a first name, last name, and set whether the contact is active or not.
+2. **Edit Contact**: Click the "Edit" button next to any contact to modify their details.
+3. **Delete Contact**: Click the "Delete" button to remove a contact.
+4. **View Contact List**: All added contacts will be displayed in the list with options to view, edit, and delete them.
+
+### Dashboard Page
+1. **COVID-19 Line Graph**: Shows the fluctuations in cases, deaths, and recoveries over time.
+2. **Interactive Map**: Shows markers for countries, and you can hover over the markers to see the active, recovered, and death statistics for each country.
