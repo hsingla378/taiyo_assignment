@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { HistoricalData } from "../utils/types";
 
 ChartJS.register(
   CategoryScale,
@@ -22,13 +23,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-// Define the TypeScript types for the API response data
-interface HistoricalData {
-  cases: Record<string, number>;
-  deaths: Record<string, number>;
-  recovered: Record<string, number>;
-}
 
 const ChartDashboard: React.FC = () => {
   const { data, isLoading, error } = useQuery<HistoricalData>(

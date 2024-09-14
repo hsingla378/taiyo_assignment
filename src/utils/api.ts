@@ -1,21 +1,5 @@
 import axios from "axios";
-
-// Type for the historical data API response
-export interface HistoricalData {
-  cases: Record<string, number>;
-  deaths: Record<string, number>;
-  recovered: Record<string, number>;
-}
-
-// Define the TypeScript type for country-specific COVID-19 data
-export interface CountryInfo {
-  _id: number;
-  iso2: string;
-  iso3: string;
-  lat: number;
-  long: number;
-  flag: string;
-}
+import { CountryInfo, HistoricalData } from "./types";
 
 export interface CountryData {
   updated: number;

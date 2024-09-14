@@ -1,12 +1,5 @@
 import React from "react";
-
-// Define the structure of a contact object
-type Contact = {
-  id: number;
-  firstName: string;
-  lastName: string;
-  active: boolean;
-};
+import { Contact } from "../utils/types";
 
 // Define the structure of the props
 type ContactDetailsProps = {
