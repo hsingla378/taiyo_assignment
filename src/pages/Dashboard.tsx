@@ -1,11 +1,11 @@
-import React from "react";
+import ChartDashboard from "../components/ChartDashboard";
 import Header from "../components/Header";
 
 const Dashboard = () => {
   return (
     <div>
       <Header />
-      Dashboard
+      <ChartDashboard />
     </div>
   );
 };

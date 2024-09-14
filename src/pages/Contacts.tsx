@@ -1,9 +1,10 @@
 import React from "react";
-import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import ContactForm from "../components/ContactForm";
 import ContactList from "../components/ContactList";
+import Header from "../components/Header";
+import { AppDispatch, RootState } from "../utils/store";
 
 // Define the structure of a contact object
 type Contact = {
@@ -34,9 +35,9 @@ const Contacts: React.FC = () => {
 
   // Use selectors and dispatch from Redux
   const contacts = useSelector(
-    (store: any) => store?.contact?.contacts
+    (store: RootState) => store?.contact?.contacts
   ) as Contact[];
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   // Handle adding a new contact
   const handleAddContact = () => {

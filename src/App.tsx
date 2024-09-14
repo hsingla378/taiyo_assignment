@@ -3,17 +3,23 @@ import Contacts from "./pages/Contacts";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+// Create a new QueryClient instance
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Router>
-      <Toaster position="top-center" reverseOrder={false} />
-      <Routes>
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route index element={<Home />} />
-      </Routes>
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Toaster position="top-center" reverseOrder={false} />
+        <Routes>
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route index element={<Home />} />
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   );
 }
 
