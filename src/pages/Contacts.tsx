@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import ContactForm from "../components/ContactForm";
 import ContactList from "../components/ContactList";
-import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 import { AppDispatch, RootState } from "../utils/store";
 
 // Define the structure of a contact object
@@ -134,30 +134,32 @@ const Contacts: React.FC = () => {
   };
 
   return (
-    <div className="text-black">
-      <Header />
-      <h1 className="text-2xl font-bold mb-8">Contacts</h1>
-      <button
-        className="bg-green-800 rounded-lg text-white p-2 px-4"
-        onClick={() => handleShowForm()}
-      >
-        Create Contact
-      </button>
-      <ContactList
-        contacts={contacts}
-        handleShowForm={handleShowForm}
-        handleDeleteContact={handleDeleteContact}
-      />
-
-      {/* Contact creation/edit form */}
-      <ContactForm
-        showForm={showForm}
-        handleHideForm={handleHideForm}
-        handleFormData={handleFormData}
-        handleAddContact={handleAddContact}
-        editMode={editMode}
-        formData={formData}
-      />
+    <div className="text-black grid md:grid-cols-12">
+      <Sidebar className="md:col-span-2 md:h-[100vh] md:fixed md:max-w-[300px]" />
+      <div className="md:col-span-10 p-6 md:p-10 md:ml-[300px] md:w-full">
+        <div className="w-full flex items-center justify-center mb-8">
+          <button
+            className="bg-green-800 rounded-lg text-white p-2 px-4"
+            onClick={() => handleShowForm()}
+          >
+            Create Contact
+          </button>
+        </div>
+        <ContactList
+          contacts={contacts}
+          handleShowForm={handleShowForm}
+          handleDeleteContact={handleDeleteContact}
+        />
+        {/* Contact creation/edit form */}
+        <ContactForm
+          showForm={showForm}
+          handleHideForm={handleHideForm}
+          handleFormData={handleFormData}
+          handleAddContact={handleAddContact}
+          editMode={editMode}
+          formData={formData}
+        />
+      </div>
     </div>
   );
 };

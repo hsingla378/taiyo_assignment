@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contacts from "./pages/Contacts";
 import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -14,9 +13,8 @@ function App() {
       <Router>
         <Toaster position="top-center" reverseOrder={false} />
         <Routes>
-          <Route path="/contacts" element={<Contacts />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route index element={<Home />} />
+          <Route index element={<Contacts />} />
         </Routes>
       </Router>
     </QueryClientProvider>

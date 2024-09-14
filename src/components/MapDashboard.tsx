@@ -31,12 +31,27 @@ const MapDashboard: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { data } = useQuery<CountryData[]>("countryData", fetchCountryData);
+  const { data, isLoading, error } = useQuery<CountryData[]>(
+    "countryData",
+    fetchCountryData
+  );
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error || !data) {
+    return <div>Error loading data</div>;
+  }
 
   return (
     <div className="p-4 bg-white rounded shadow-lg">
       <h2 className="text-xl font-bold mb-4">COVID-19 Map</h2>
-      <MapContainer center={[20, 0]} zoom={2} className="w-full h-[800px]">
+      <MapContainer
+        center={[20, 0]}
+        zoom={2}
+        className="w-full h-[500px] md:h-[800px] px-4"
+      >
         <TileLayer url="https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=NLe8DG6CVIhkI4PpAXR1" />
         {data?.map((country) => {
           const icon = createIcon(country.countryInfo.flag, iconSize);

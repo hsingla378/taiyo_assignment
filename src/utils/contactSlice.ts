@@ -12,44 +12,7 @@ interface ContactState {
 }
 
 const initialState: ContactState = {
-  contacts: [
-    {
-      id: 1,
-      firstName: "John",
-      lastName: "Smith",
-      active: true,
-    },
-    {
-      id: 2,
-      firstName: "Jane",
-      lastName: "Doe",
-      active: true,
-    },
-    {
-      id: 3,
-      firstName: "James",
-      lastName: "Bond",
-      active: false,
-    },
-    {
-      id: 4,
-      firstName: "Bruce",
-      lastName: "Wayne",
-      active: true,
-    },
-    {
-      id: 5,
-      firstName: "Clark",
-      lastName: "Kent",
-      active: true,
-    },
-    {
-      id: 6,
-      firstName: "Diana",
-      lastName: "Prince",
-      active: false,
-    },
-  ],
+  contacts: [],
 };
 
 const contactSlice = createSlice({
