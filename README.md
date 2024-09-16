@@ -1,6 +1,6 @@
 # Contact Management App with Charts and Maps
 
-[Assignment Reference](https://github.com/hsingla378/taiyo_assignment/blob/master/Frontend%20Task%20-%20Taiyo.pdf) 
+[Assignment Reference](https://docs.google.com/document/d/1WV6fZhiSuqCyZmTxRjctBZgOXsTAoKS4Kj5k3FyB3Mc/edit) 
 
 [Live App](https://taiyoassignment.vercel.app/)
 
